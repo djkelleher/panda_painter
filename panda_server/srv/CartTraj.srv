@@ -1,0 +1,5 @@
+Waypoint[] waypoints
+float32 velocity_scale_factor
+bool display_waypoints
+---
+bool success

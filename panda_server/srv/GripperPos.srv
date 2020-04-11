@@ -1,0 +1,4 @@
+float32 width # value 0-0.04
+float32 speed
+---
+bool success

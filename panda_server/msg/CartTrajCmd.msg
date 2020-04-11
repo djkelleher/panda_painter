@@ -1,0 +1,4 @@
+std_msgs/Header header
+geometry_msgs/PoseStamped position
+geometry_msgs/TwistStamped velocity
+geometry_msgs/TwistStamped acceleration

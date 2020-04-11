@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!-- start MoveIt -->
+  <include file="$(find panda_moveit_config)/launch/demo.launch"/>
+
+  <!-- start rosbrigde server -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+  <!-- start services -->
+  <node name="panda_services" pkg="panda_server" type="panda_services.py" output="screen"/>
+
+</launch>

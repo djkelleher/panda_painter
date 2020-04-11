@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<launch>
+
+  <!-- address of the arm -->
+  <arg name="robot_ip" default="172.16.0.2"/>
+
+  <!-- start MoveIt -->
+  <include file="$(find panda_moveit_config)/launch/panda_moveit.launch">
+    <arg name="load_gripper" value="true" />
+  </include>
+
+  <!-- start arm drivers -->
+  <include file="$(find franka_control)/launch/franka_control.launch">
+    <arg name="robot_ip" value="$(arg robot_ip)" />
+    <arg name="load_gripper" value="true" />
+  </include>
+
+  <!-- start rosbrigde server -->
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/>
+
+  <!-- start services -->
+  <node name="panda_services" pkg="panda_server" type="panda_services.py" output="screen"/>
+
+  <node name="time_parameterization" pkg="panda_server" type="time_param" output="screen"/>
+
+</launch>

@@ -1,0 +1,7 @@
+float64 width # [m]
+float64 inner_epsilon #[m]
+float64 outer_epsilon #[m]
+float64 speed # [m/s]
+float64 force # [N]
+---
+bool success

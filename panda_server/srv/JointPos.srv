@@ -1,0 +1,4 @@
+float32[] joint_goal_list
+bool relative
+---
+bool success
